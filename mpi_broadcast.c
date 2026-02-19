@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include <mpi.h>
 
-int main(int argc , char **argv)
+int main(int argc , char *argv[])
 {
     int i,nprocs,arr[8],rank;
     MPI_Init(&argc , &argv);
@@ -22,4 +22,5 @@ int main(int argc , char **argv)
     printf("Process %d calculated sum=%d\n",rank,sum);
     MPI_Finalize();
     return 0;
+
 }
