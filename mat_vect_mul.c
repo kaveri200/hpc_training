@@ -32,8 +32,7 @@ int main(int argc, char *argv[])
     local_result = 0;
     for(int i=0;i<4;i++)
         local_result += row[i] * vector[i];
-    printf("Process %d computed y[%d] = %d\n",
-            rank, rank, local_result);
+    printf("Process %d computed y[%d] = %d\n",rank, rank, local_result);
     MPI_Gather(&local_result, 1, MPI_INT,result, 1, MPI_INT,0, MPI_COMM_WORLD);
     if(rank == 0)
     {
@@ -45,3 +44,4 @@ int main(int argc, char *argv[])
     return 0;
 
 }
+
